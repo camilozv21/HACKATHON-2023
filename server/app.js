@@ -12,8 +12,8 @@ connectDB();
 
 app.use(cors());
 
-// app.get('/', (req, res) => {
-//     res.send(`Bienvenidos a mi servidor`)
-// });
+app.get('/', (req, res) => {
+    res.send(`Bienvenidos a mi servidor`)
+});
 
 app.listen(port, console.log(`server running on port ${port}`));
