@@ -17,8 +17,9 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 
-app.get('/', (req, res) => {
-    res.send(`Bienvenidos a mi servidor`)
+app.get('/home', (req, res) => {
+    const saludo = "Bienvenidos a mi servidor"
+    res.json(saludo)
 });
 
 app.listen(port, console.log(`server running on port ${port}`));
