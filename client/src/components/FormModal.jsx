@@ -13,24 +13,22 @@ function FormModal() {
   }
   const onSubmit = async (e) => {
     e.preventDefault();
-
+  
     const formData = new FormData();
     formData.append('file', file);
-
+    formData.append('methodology', e.target.methodology.value); // Agrega la metodología al FormData
+    
+    handleClose();
     try {
-      const response = await fetch('http://localhost:5000/api/process', {
+      await fetch('http://localhost:5000/api/process', {
         method: 'POST',
         body: formData,
       });
-
-      const result = await response.text();
-      console.log(result);
-      handleClose()
+  
     } catch (error) {
-      handleClose()
       console.error('Error al subir el archivo', error);
     }
-  }
+  };
 
   return (
     <>
@@ -45,20 +43,20 @@ function FormModal() {
         </Modal.Header>
         <Modal.Body>
         <form action="" onSubmit={onSubmit}>
-                    <div className="mb-3">
-                        <label className="form-label">Choose your preferred methodology</label>
-                        <select className="form-select" id="methodology" name='methodology'>
-                            <option value="plot">Plot</option>
-                            <option value="clustering">Clustering</option>
-                            <option value="correlation">Correlation</option>
-                        </select>
-                    </div>
-                    <div className="mb-3">
-                        <label className="form-label">Select Your Data File CSV, HDF or TXT</label>
-                        <input type="file" className="form-control" id="file" name='file' onChange={handleFile} />
-                    </div>
-                    <button type="submit" data-bs-dismiss="modal" className="btn btn-primary">Submit</button>
-                </form>
+              <div className="mb-3">
+                  <label className="form-label">Choose your preferred methodology</label>
+                  <select className="form-select" id="methodology" name='methodology'>
+                      <option value="plot">Plot</option>
+                      <option value="clustering">Clustering</option>
+                      <option value="correlation">Correlation</option>
+                  </select>
+              </div>
+              <div className="mb-3">
+                  <label className="form-label">Select Your Data File CSV, HDF or TXT</label>
+                  <input type="file" className="form-control" id="file" name='file' onChange={handleFile} />
+              </div>
+              <button type="submit" data-bs-dismiss="modal" className="btn btn-primary">Submit</button>
+          </form>
         </Modal.Body>
       </Modal>
     </div>

@@ -1,11 +1,16 @@
 const express = require('express');
 const connectDB = require('./database/config/db');
 const colors = require('colors')
+const bodyParser = require('body-parser');
 const cors = require('cors')
 require('dotenv').config();
 const port = process.env.PORT || 5000;
 
 const app = express();
+
+// Configura body-parser
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 // Connect to database
 connectDB();
