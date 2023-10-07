@@ -5,3 +5,11 @@
 .t-primary {
   color: #e4e4e4;
 }
+
+.background-container {
+  background-image: url('./assets/background.jpg'); /* Replace with your image path */
+  background-size: cover; /* Adjust as needed */
+  background-position: center; /* Adjust as needed */
+  height: 100vh; /* Adjust as needed */
+  /* Add other styles as needed */
+}
