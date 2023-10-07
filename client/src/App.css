@@ -6,10 +6,20 @@
   color: #e4e4e4;
 }
 
-.background-container {
-  background-image: url('./assets/background.jpg'); /* Replace with your image path */
-  background-size: cover; /* Adjust as needed */
-  background-position: center; /* Adjust as needed */
-  height: 100vh; /* Adjust as needed */
-  /* Add other styles as needed */
+body {
+  background-color: #e4e4e4;
+}
+
+.box-upload {
+  border: 2px solid #010C80;
+}
+
+.btn-primary {
+  background-color: #010C80 !important;
+  border: none !important;
+}
+
+.btn-primary:hover {
+  background-color: #051088;
+  opacity: 0.9;
 }
