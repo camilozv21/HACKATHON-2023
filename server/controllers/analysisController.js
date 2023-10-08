@@ -15,21 +15,30 @@ module.exports = {
                 const newAnalysis = new Analysis({
                     filename: req.file.filename,
                     methodology: data.methodology,
-                  });
+                });
               
                 await newAnalysis.save();
 
+                let cleanedNames;
+
                 childProcess.stdout.on('data', (data) => {
-                    console.log(`stdout: ${data}`);
+                    const varpython = data.toString().trim()
+                    // console.log(`Variable recibida en Node.js: ${varpython}`);
+
+                    cleanedNames = varpython.split(',').slice(2).join(',');
+                    // console.log('Nombres limpios:', cleanedNames)
                 });
 
                 childProcess.stderr.on('data', (data) => {
                     console.error(`stderr: ${data}`);
                 });
 
-                childProcess.on('close', (code) => {
-                    console.log(`Child process closed with code ${code}`);
+                childProcess.on('close', async (code) => {
+                    // console.log(`Child process closed with code ${code}`);
                     // You can add additional logic here after the script execution is complete
+                    newAnalysis.cleanedNames = cleanedNames;
+                    await newAnalysis.save();
+
                     res.send('Success!');
                 });
             } catch (error) {

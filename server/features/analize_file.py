@@ -16,7 +16,7 @@ def Netcdf2list():
     fn = sys.stdin.read()
     fn = fn.rstrip(' \n')
 # Hacer algo con la entrada
-    print("Input recibido:", fn)
+    # print("Input recibido:", fn)
     corr_array=[]
     titles=[]
 
@@ -27,29 +27,29 @@ def Netcdf2list():
 
     dimensiones=ds.dimensions
     varlist=list(variables)
-    print(varlist)
+    # print(varlist)
     titles.append(varlist)
-    print(titles)
+    # print(titles)
     titles=np.array(titles)
-    print(titles.shape)
+    # print(titles.shape)
 
     for i in range(len(varlist)):
         corr=ds[varlist[i]][:]
-        print(corr)
-        print(type(corr))
+        # print(corr)
+        # print(type(corr))
         corr_array.append(corr)
        
-    print("----")
+    # print("----")
     data=ma.getdata(corr_array)
-    print(ma.getdata(corr_array))
+    # print(ma.getdata(corr_array))
     transpuesta=np.array(data).T
-    print("--------Traspuesta----------")
-    print(transpuesta)
-    print(transpuesta.shape)
+    # print("--------Traspuesta----------")
+    # print(transpuesta)
+    # print(transpuesta.shape)
     final_data=np.vstack((titles,transpuesta))
     dataframe=pd.DataFrame(transpuesta,columns=varlist)
     
-    print(dataframe)
+    # print(dataframe)
 
     nombre_archivo = "lista.txt"
 
@@ -79,15 +79,15 @@ def autograph():
     titles=[]
     with open(route, 'r') as archivo:
         titles = archivo.readline().strip().split()
-        print(titles)
+        # print(titles)
 
     #Obtain all possible combinations
     data = np.loadtxt(route, skiprows=1)
     cols=data.shape[1]
     rand_i=np.arange(cols)
-    print(rand_i)
+    # print(rand_i)
     combinations=list(itertools.combinations(rand_i,2))
-    print(combinations)
+    # print(combinations)
     col_secindex=len(combinations)
 
     for combination in combinations:
@@ -98,7 +98,7 @@ def autograph():
         x,y=np.loadtxt(route,skiprows=1,usecols=[row,col],unpack=True)
         plt.title(f"{titles[row]} vs {titles[col]} ($0 \leq E \leq 1x10^{19}$ eV)",fontname='Times New Roman')
         down_menu=[titles[row],titles[col]]
-        print(down_menu)
+        # print(down_menu)
         plt.xlabel(f'{titles[row]}',fontname='Times New Roman')
         plt.ylabel(f'{titles[col]}',fontname='Times New Roman')
         #Seleccion de tipo de grafico 
@@ -118,9 +118,9 @@ def plot(df):
   ''' Receive a dataframe, with no column index and the first row are the parameter names.'''
   # Generate all possible combinations of columns
   all_possible_combinations = list(itertools.combinations(np.arange(df.shape[1]), 2))
-
+  names=' '
   # Iterate through combinations and generate graphs
-  for pair in all_possible_combinations:
+  for pair in all_possible_combinations[1:10]:
     corr_pearson, _ = pearsonr(df[df.columns[pair[0]]], df[df.columns[pair[1]]])
     corr_spearman, _ = spearmanr(df[df.columns[pair[0]]], df[df.columns[pair[1]]])
     corr_kendall, _ = kendalltau(df[df.columns[pair[0]]], df[df.columns[pair[1]]])
@@ -135,7 +135,11 @@ def plot(df):
     plt.ylabel(f'{df.columns[pair[1]]}')
     ruta_corr='server/database/data/image/correlation/'
     plt.savefig(ruta_corr+file_name+'.jpg')
+    names=names+','+file_name+'.jpg'
     plt.close()
+  print(names)
+  return names
+
     #plt.show()
   
 data = pd.read_csv("lista.txt", sep=" ", index_col=0)
