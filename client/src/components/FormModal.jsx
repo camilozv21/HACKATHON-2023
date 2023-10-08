@@ -32,17 +32,14 @@ function FormModal() {
     formData.append('methodology', methodology);
     formData.append('clusterCount', clusterCount);
 
+    navigate(`/result/6522ab80986aad3d4d3bda49`);
     handleClose();
     try {
       await fetch('http://localhost:4000/api/process', {
         method: 'POST',
         body: formData,
       });
-
-        // Redirige a la ruta /result/:id
-      navigate(`/result/6522ab80986aad3d4d3bda49`);
     } catch (error) {
-      navigate(`/result/6522ab80986aad3d4d3bda49`);
       console.error('Error al subir el archivo', error);
     }
   };

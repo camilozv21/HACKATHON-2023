@@ -120,7 +120,7 @@ def plot(df):
   all_possible_combinations = list(itertools.combinations(np.arange(df.shape[1]), 2))
   names=' '
   # Iterate through combinations and generate graphs
-  for pair in all_possible_combinations[1:20]:
+  for pair in all_possible_combinations[130:150]:
     corr_pearson, _ = pearsonr(df[df.columns[pair[0]]], df[df.columns[pair[1]]])
     corr_spearman, _ = spearmanr(df[df.columns[pair[0]]], df[df.columns[pair[1]]])
     corr_kendall, _ = kendalltau(df[df.columns[pair[0]]], df[df.columns[pair[1]]])
