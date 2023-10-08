@@ -32,7 +32,7 @@ function FormModal() {
 
     handleClose();
     try {
-      await fetch('http://localhost:5000/api/process', {
+      await fetch('https://hackathon-2023-udov.vercel.app/api/process', {
         method: 'POST',
         body: formData,
       });

@@ -1,29 +1,29 @@
-import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom';
-import { CarouselPlot } from '../components/CarouselPlot'
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import axios from 'axios';
+import { CarouselPlot } from "../components/CarouselPlot";
 
 export const Results = () => {
-    const [analyst, setAnalyst] = useState({});
-    const { id } = useParams();
+  const { id } = useParams();
+  const [analyst, setAnalyst] = useState(null);
 
-    const getAnalyst = async () => {
-        try {
-            const response = await axios.get(`http://localhost:5000/api/analyst/${id}`);
-            console.log(response)
-            setAnalyst(response)
-        } catch (error) {
-            console.log(error);
-        }
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`https://hackathon-2023-udov.vercel.app/api/analyst/${id}`);
+        setAnalyst(response.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
     };
-    useEffect(() => {
-        getAnalyst();
-    }, [])
+
+    fetchData();
+  }, [id]);
 
   return (
     <>
-        <CarouselPlot imag={analyst} />
+      <CarouselPlot />
+      {console.log(analyst)}
     </>
-  )
-}
-
+  );
+};
