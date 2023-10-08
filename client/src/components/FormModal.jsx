@@ -35,7 +35,7 @@ function FormModal() {
     navigate(`/result/6522ab80986aad3d4d3bda49`);
     handleClose();
     try {
-      await fetch('http://localhost:4000/api/process', {
+      await fetch('https://hackathon-2023-beryl.vercel.app/api/process', {
         method: 'POST',
         body: formData,
       });
