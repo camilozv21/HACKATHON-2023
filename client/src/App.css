@@ -1,5 +1,5 @@
 .caurosel-img {
-  height: 80vh;
+  height: 65vh;
 }
 
 .t-primary {
@@ -10,16 +10,78 @@ body {
   background-color: #e4e4e4;
 }
 
-.box-upload {
+/* .box-upload {
   border: 2px solid #010C80;
-}
+} */
 
 .btn-primary {
   background-color: #010C80 !important;
+  padding: 10px;
   border: none !important;
 }
 
 .btn-primary:hover {
   background-color: #051088;
   opacity: 0.9;
+}
+
+.backgroung-img{
+  transform: scaleX(1.5); /* Increase the width by 1.5 times on hover */
+  transition: transform 0.3s ease-in-out;
+}
+
+.Scroll {
+  text-align: center;
+  font-size: 50px;
+}
+
+.Scroll-logo {
+  pointer-events: none;
+  max-width: 100%;
+}
+.Scroll-btn{
+  background-color: #010C80 !important;
+  padding: 10px;
+  margin: 20px;
+  border: none !important;
+  border-radius: 10px;
+}
+.Scroll-btn:hover {
+  background-color: #051088;
+  opacity: 0.9;
+}
+
+.Scroll-header {
+  background-color:#fff !important ;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white ;
+  opacity: 1 !important;
+}
+
+.Scroll-link {
+  color: #61dafb;
+}
+
+.Scroll-main {
+  padding: 200px 10% 400px 10%;
+  margin: 0 auto;
+  background: #FC466B;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #3F5EFB, #FC466B);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #3F5EFB, #FC466B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.Scroll-section {
+  max-width: calc(50% - 50px);
+  margin: 0 auto 100px auto;
+  padding: 50px;
+  background-color: #fff;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
 }

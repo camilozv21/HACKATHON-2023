@@ -1,4 +1,8 @@
 import Carousel from 'react-bootstrap/Carousel';
+import bg1 from '../assets/bg1.png';
+import bg2 from '../assets/bg2.png';
+import bg3 from '../assets/bg3.png';
+import bg11 from '../assets/bg11.png';
 
 function DarkVariantExample() {
   return (
@@ -6,7 +10,7 @@ function DarkVariantExample() {
       <Carousel.Item>
         <img
           className="d-block w-100 caurosel-img"
-          src="https://cdn.britannica.com/66/132266-050-2B03F468/Rainbow-Bridge-shore-Tokyo-Bay-Japan.jpg"
+          src={bg1}
           alt="First slide"
         />
         <Carousel.Caption>
@@ -17,7 +21,7 @@ function DarkVariantExample() {
       <Carousel.Item>
         <img
           className="d-block w-100 caurosel-img"
-          src="https://rare-gallery.com/uploads/posts/4575250-rio-de-janeiro-cityscape-hills-long-exposure-wires-boat-sea-brazil.jpg"
+          src={bg2}
           alt="Second slide"
         />
         <Carousel.Caption>
@@ -28,7 +32,7 @@ function DarkVariantExample() {
       <Carousel.Item>
         <img
           className="d-block w-100 caurosel-img"
-          src="https://m.media-amazon.com/images/I/81Ms4D9UHsL.jpg"
+          src={bg3}
           alt="Third slide"
         />
         <Carousel.Caption>
