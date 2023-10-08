@@ -9,7 +9,7 @@ export const Results = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:4000/api/analyst/${id}`);
+        const response = await fetch(`https://hackathon-2023-beryl.vercel.app/api/analyst/${id}`);
         const data = await response.json();
         setAnalyst(data);
       } catch (error) {
