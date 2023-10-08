@@ -47,7 +47,7 @@ export const CarouselPlot = () => {
 
       <div className="d-grid gap-2 pb-5 button-div m-auto">
       <Button variant="primary" size="lg" onClick={() => setShow(true)}>
-        Dowload your charts
+        Download your charts
       </Button>
     </div>
     <ToastContainer position="bottom-start" className="p-3 m-3" style={{ zIndex: 1 }}>
@@ -61,7 +61,7 @@ export const CarouselPlot = () => {
             <strong className="me-auto">Dowload</strong>
             <small>0 mins ago</small>
             </Toast.Header>
-            <Toast.Body>Dowloading your content</Toast.Body>
+            <Toast.Body>Downloading your content</Toast.Body>
         </Toast>
     </ToastContainer>
     </>
