@@ -6,6 +6,14 @@
   color: #e4e4e4;
 }
 
+.carousel-caption {
+  bottom: -1rem !important;
+}
+
+.t-caption {
+  color: #010C80 !important;
+}
+
 body {
   background-color: #e4e4e4;
 }
@@ -84,4 +92,12 @@ body {
   align-content: center;
   justify-content: center;
   flex-direction: column;
+}
+.caurosel_data {
+  width: 50%;
+  margin: auto;
+}
+
+.button-div {
+  max-width: 60%;
 }
