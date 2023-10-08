@@ -23,3 +23,8 @@ body {
   background-color: #051088;
   opacity: 0.9;
 }
+
+.caurosel_data {
+  width: 50%;
+  margin: auto;
+}

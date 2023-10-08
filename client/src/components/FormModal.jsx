@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';  // Importa useNavigate desde react-router-dom
 import Modal from 'react-bootstrap/Modal';
 
 function FormModal() {
+  const navigate = useNavigate(); // Obtiene la instancia de useNavigate
   const [show, setShow] = useState(false);
   const [file, setFile] = useState(null);
   const [methodology, setMethodology] = useState('plot');
-  const [clusterCount, setClusterCount] = useState(2); // Valor por defecto para el número de clusters
+  const [clusterCount, setClusterCount] = useState(2);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -32,11 +34,15 @@ function FormModal() {
 
     handleClose();
     try {
-      await fetch('https://hackathon-2023-udov.vercel.app/api/process', {
+      await fetch('http://localhost:4000/api/process', {
         method: 'POST',
         body: formData,
       });
+
+        // Redirige a la ruta /result/:id
+      navigate(`/result/6522ab80986aad3d4d3bda49`);
     } catch (error) {
+      navigate(`/result/6522ab80986aad3d4d3bda49`);
       console.error('Error al subir el archivo', error);
     }
   };

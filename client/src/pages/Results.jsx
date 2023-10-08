@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import axios from 'axios';
 import { CarouselPlot } from "../components/CarouselPlot";
 
 export const Results = () => {
@@ -10,10 +9,11 @@ export const Results = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://hackathon-2023-udov.vercel.app/api/analyst/${id}`);
-        setAnalyst(response.data);
+        const response = await fetch(`http://localhost:4000/api/analyst/${id}`);
+        const data = await response.json();
+        setAnalyst(data);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error(error);
       }
     };
 
@@ -22,8 +22,7 @@ export const Results = () => {
 
   return (
     <>
-      <CarouselPlot />
-      {console.log(analyst)}
+      <CarouselPlot datas={analyst} />
     </>
   );
 };
