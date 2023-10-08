@@ -4,6 +4,7 @@ import { Home } from './pages/Home';
 import NavigationBar from './components/NavigationBar';
 import NotFound from './pages/NotFound';
 import { Results } from './pages/Results';
+import { AboutUs } from './pages/AboutUs';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/result/:id' element={<Results />} />
+          <Route path='/aboutus' element={<AboutUs />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </div>
