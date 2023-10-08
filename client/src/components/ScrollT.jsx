@@ -75,9 +75,14 @@ export default function ScrollT(){
   return (
     <div className="Scroll">
       Scroll Down
+      <svg className="arrows">
+      <path className="a1" d="M0 0 L30 32 L60 0"></path>
+      <path className="a2" d="M0 20 L30 52 L60 20"></path>
+      <path className="a3" d="M0 40 L30 72 L60 40"></path>
+    </svg>
       <header ref={headerRef} className="Scroll-header">
       </header>
-      <main className="Scroll-main">
+      <main className="Scroll-main" id="Description">
         {
           sections.map(({title, subtitle}) => (
             <div className="Scroll-section" key={title} ref={addToRefs}>
