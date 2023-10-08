@@ -6,17 +6,28 @@ gsap.registerPlugin(ScrollTrigger);
 
 const sections = [
   {
-    title: 'Architecto aliquam', 
-    subtitle: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. At, ea.'
+    title: 'Step 1', 
+    subtitle: 'Go to NASA EathData website and select the folder data type. We recommend you the NET CDF format.'
   },
   {
-    title: 'Ceritatis placeat', 
-    subtitle: 'Dignissimos placeat cupiditate perferendis eaque praesentium similique officia dolore?'
+    title: 'Step 2', 
+    subtitle: 'Download the database on your PC.'
   },
   {
-    title: 'Vitae voluptates', 
-    subtitle: 'In ullam et nulla repudiandae praesentium, laboriosam quas tempore fuga asperiores eveniet amet.'
-  }
+    title: 'Step 3', 
+    subtitle: "Choose the analysis type of your preference. Don't know what to choose?. Correlations: Obtain all possible combinatios between the variables in the dataset such as temperature, altitude, wind velocity among others. This type of analysis will also provide you statistical correlation between the variables through 3 methods: Pearson, Seaborn and Kendal."
+  },
+  {
+    title: 'Step 4', 
+    subtitle: 'Upload the file by clicking the Choose File button.'
+  },
+  {
+    title: 'Step 5', 
+    subtitle: 'Download clean and orginized data for your future analysis by clicking the Download your Charts button.'
+  },
+  {
+    title: 'Good Research! :)',
+  },
 ];
 
 export default function ScrollT(){
@@ -92,6 +103,7 @@ export default function ScrollT(){
           ))
         }
       </main>
+      
     </div>
   );
 }
