@@ -35,7 +35,7 @@ export const CarouselPlot = () => {
           <Carousel.Item key={index}>
             <img
               className="d-block w-100 caurosel-img"
-              src={`http://localhost:4000/database/data/image/correlation/${imageName}`}
+              src={`https://hackathon-2023-beryl.vercel.app/database/data/image/correlation/${imageName}`}
               alt={`Slide ${index + 1}`}
             />
             <Carousel.Caption>

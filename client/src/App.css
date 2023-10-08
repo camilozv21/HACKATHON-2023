@@ -159,3 +159,19 @@ body {
  text-align: justify;
  font-size: 1.2rem;
 }
+
+.asdfasdf {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: auto;
+  justify-content: space-between;
+  max-width: 1300px;
+}
+
+.asdfimg {
+  max-width: 40%;
+}
+.asdfimg img{
+  max-width: 100%;
+}
