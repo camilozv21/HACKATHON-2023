@@ -4,11 +4,13 @@ module.exports = {
     processForm: async (req, res) => {
         const data = req.body;
         console.log(data.methodology)
+        
 
         if (data.methodology === 'plot') {
             try {
                 const path = './server/features/analize_file.py';
-                const childProcess = spawn('python', [path]);
+                const command = `echo ${data.methodology} | python ${path}`;
+                const childProcess = spawn(command, { shell: true });
 
                 childProcess.stdout.on('data', (data) => {
                     console.log(`stdout: ${data}`);
@@ -30,7 +32,8 @@ module.exports = {
         }  else if (data.methodology === 'clustering') {
             try {
                 const path = './server/features/analize_file.py';
-                const childProcess = spawn('python', [path]);
+                const command = `echo ${data.methodology} | python ${path}`;
+                const childProcess = spawn(command, { shell: true });
 
                 childProcess.stdout.on('data', (data) => {
                     console.log(`stdout: ${data}`);
@@ -52,7 +55,8 @@ module.exports = {
         } else if (data.methodology === 'correlation') {
             try {
                 const path = './server/features/analize_file.py';
-                const childProcess = spawn('python', [path]);
+                const command = `echo ${data.methodology} | python ${path}`;
+                const childProcess = spawn(command, { shell: true });
 
                 childProcess.stdout.on('data', (data) => {
                     console.log(`stdout: ${data}`);

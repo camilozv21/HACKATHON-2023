@@ -1,15 +1,21 @@
 import './App.css';
-import CarouselFade from './components/Carousel';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { Home } from './pages/Home';
 import NavigationBar from './components/NavigationBar';
-import FormModal from './components/FormModal';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
-    <div className="App">
-      <NavigationBar />
-      <CarouselFade />
-      <FormModal/>
-    </div>
+    <Router>
+        <NavigationBar />
+      <div className="App">
+        <Routes>
+          <Route path='/' element={<Home />} />
+          
+          <Route path='*' element={<NotFound />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
