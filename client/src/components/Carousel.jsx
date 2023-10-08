@@ -2,11 +2,10 @@ import Carousel from 'react-bootstrap/Carousel';
 import bg1 from '../assets/bg1.png';
 import bg2 from '../assets/bg2.png';
 import bg3 from '../assets/bg3.png';
-import bg11 from '../assets/bg11.png';
 
 function DarkVariantExample() {
   return (
-    <Carousel data-bs-theme="dark" fade slide={true}>
+    <Carousel data-bs-theme="dark" fade slide={true} interval={1500}>
       <Carousel.Item>
         <img
           className="d-block w-100 caurosel-img"
@@ -14,8 +13,6 @@ function DarkVariantExample() {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h5 className="t-primary">New York</h5>
-          <p className="t-primary">This city had lost 13% of landing area</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -25,8 +22,6 @@ function DarkVariantExample() {
           alt="Second slide"
         />
         <Carousel.Caption>
-          <h5 className="t-primary">Rio de Janeiro</h5>
-          <p className="t-primary">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -36,10 +31,6 @@ function DarkVariantExample() {
           alt="Third slide"
         />
         <Carousel.Caption>
-          <h5 className="t-primary">Tokyo</h5>
-          <p className="t-primary">
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

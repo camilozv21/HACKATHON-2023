@@ -1,27 +1,5 @@
-// // import {bg} from "../assets/bg.jpg";
-// // import bg from "../assets/bg.jpg";
-// // import logo from "../assets/logo.png";
-// // // import gsap from "gsap";
-// // import {useRef,useEffect} from "react";
-
-// // export default function ScrollTrigger(){
-// //     const imgRef=useRef(null);
-// //     useEffect(()=>{
-// //         const el=imgRef.current;
-// //         gsap.fromTo(el,{rotation:0},{rotation:360, duration:3})
-// //     },[])
-// //     return(
-// //     <div className="scroll">
-// //         <div className="helper" ></div>
-// //         <img src={logo} alt="scrollbg" ref={imgRef} />
-// //     </div>
-// //     );
-
-// // }
 import gsap from "gsap";
 import {useRef,useEffect, useState} from "react";
-import logo from "../assets/logo.png";
-import Button from 'react-bootstrap/Button';
 
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
