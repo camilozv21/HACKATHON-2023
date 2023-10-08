@@ -15,7 +15,10 @@ const storage = multer.diskStorage({
   
   const upload = multer({ storage });
 
-// @GET - /api/process
+// @POST - /api/process
 router.post("/api/process", upload.single('file'), controller.processForm);
+
+// @GET - /api/analyst/:id
+router.get("/api/analyst/:id", controller.getAnalysisById);
 
 module.exports = router
