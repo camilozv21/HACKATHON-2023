@@ -9,11 +9,14 @@ from matplotlib.colors import LinearSegmentedColormap
 from scipy.stats import pearsonr
 from scipy.stats import spearmanr
 from scipy.stats import kendalltau
-
+import sys
 
 def Netcdf2list():
 
-    fn=input("Ingrese ruta")
+    fn = sys.stdin.read()
+    fn = fn.rstrip(' \n')
+# Hacer algo con la entrada
+    print("Input recibido:", fn)
     corr_array=[]
     titles=[]
 
@@ -130,7 +133,7 @@ def plot(df):
     plt.scatter(df[df.columns[pair[0]]], df[df.columns[pair[1]]])
     plt.xlabel(f'{df.columns[pair[0]]}')
     plt.ylabel(f'{df.columns[pair[1]]}')
-    ruta_corr='server/database/data/image/correlation'
+    ruta_corr='server/database/data/image/correlation/'
     plt.savefig(ruta_corr+file_name+'.jpg')
     plt.close()
     #plt.show()
