@@ -47,8 +47,8 @@ function FormModal() {
   return (
     <>
       <div className='d-flex justify-content-center align-items-center p-5 box-upload'>
-        <button variant="primary" onClick={handleShow} className='btn btn-primary'>
-          Create a new GeoAnalysis
+        <button variant="primary" onClick={handleShow} className='btn btn-primary p-4 btn-txt'>
+          Create a New GeoAnalysis
         </button>
 
         <Modal show={show} onHide={handleClose} centered>

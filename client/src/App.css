@@ -33,6 +33,10 @@ body {
   opacity: 0.9;
 }
 
+.btn-txt {
+  font-size: 25px !important;
+}
+
 .backgroung-img{
   transform: scaleX(1.5); /* Increase the width by 1.5 times on hover */
   transition: transform 0.3s ease-in-out;
