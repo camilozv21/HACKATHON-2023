@@ -4,8 +4,9 @@ import Button from 'react-bootstrap/Button';
 import Toast from 'react-bootstrap/Toast'; 
 import ToastContainer from 'react-bootstrap/ToastContainer';
 
-export const CarouselPlot = () => {
+export const CarouselPlot = (props) => {
   const [show, setShow] = useState(false);
+  console.log(props.datas)
 
   const vec = [
   'lat vs pole_tide.jpg',
